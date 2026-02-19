@@ -353,6 +353,42 @@ The SDK supports two address formats:
 
 Both formats are automatically parsed by the SDK.
 
+## TRON Network Support
+
+EIP-8004 registries are also deployed on TRON via the [M2M TRC-8004 Registry](https://m2mregistry.io). TRON uses Base58Check addresses (starting with `T`) instead of `0x` hex addresses.
+
+### TRON Contract Addresses
+
+#### Mainnet
+
+| Contract | Address |
+|----------|---------|
+| IdentityRegistry | `THmfi8uJuUpTfUmYLDX7UD1KaE4P6HKgqA` |
+| ReputationRegistry | `TV8KWmp8qcj55sjs1NSjVxmRmZP7CYzNxH` |
+| ValidationRegistry | `TCoJA4BYXWZhp5eanCchMw67VA83tQ83n1` |
+| IncidentRegistry | `TJ26Pu24ar7Qdh9Bm6tbBVdtzCJkbxS5eR` |
+
+#### Shasta Testnet
+
+| Contract | Address |
+|----------|---------|
+| IdentityRegistry | `TFKNqk9bjwWp5uRiiGimqfLhVQB8jSxYi7` |
+| ReputationRegistry | `TRaYogyr2qc7WgsmuVF5Js39aCmoG7vZrA` |
+| ValidationRegistry | `TPgGWWyUdxNryUCN49TdT4b3F4WB3Edr16` |
+| IncidentRegistry | `TPB59NFdypBpkJtWH7yE8XenKrdT1Q4g4s` |
+
+### TRON Address Format
+
+TRON uses Base58Check encoding. To use with this SDK, convert TRON addresses to their hex representation:
+
+```rust
+// TRON Base58 address: THmfi8uJuUpTfUmYLDX7UD1KaE4P6HKgqA
+// Equivalent hex: 0x4B7Ef3B2B6C2E1A9D8F5C3A1E4D7F6B8A2C9E5D1 (example)
+// Use the hex form with this SDK
+```
+
+For a Python-based TRON SDK, see [trc8004-m2m](https://github.com/M2M-TRC8004-Registry/trc8004-m2m-sdk) (`pip install trc8004-m2m`).
+
 ## Error Handling
 
 All functions return `Result<T, anyhow::Error>` for comprehensive error handling:
@@ -401,3 +437,5 @@ at your option.
 
 - [EIP-8004 Specification](https://eips.ethereum.org/EIPS/eip-8004)
 - [Alloy Documentation](https://alloy.rs)
+- [M2M TRC-8004 Registry](https://m2mregistry.io) - TRON implementation of EIP-8004
+- [TRC-8004 Python SDK](https://github.com/M2M-TRC8004-Registry/trc8004-m2m-sdk) - Python SDK for TRON
